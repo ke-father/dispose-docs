@@ -1,0 +1,171 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+
+.tl {
+  text-align: left;
+}
+
+.tc {
+  text-align: center;
+}
+
+.tr {
+  text-align: right;
+}
+
+em,
+i {
+  font-style: normal;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:focus,
+a:active,
+div,
+button,
+div:focus,
+button:focus,
+button:hover,
+button:active {
+  outline: none;
+}
+
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+.search-box .suggestion a .suggestion-row .suggestion-content .highlight
+  color: blue;
+  background-color: NavajoWhite;
+
+img
+  object-fit: fill;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+
+ol, ul {
+  font-size: 14px;
+  color: #666;
+}
+
+
+blockquote {
+  ul {
+    font-size: 14px
+    color: #999;
+  }
+}
+
+table {
+  th, td {
+    text-align: left !important;
+  }
+}
+
+a[data-fancybox] {
+  img {
+    box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, .3);
+  }
+}
+
+.navbar {
+  display flex
+  flex-wrap nowrap
+  justify-content space-between
+  align-items center
+
+  .home-link {
+    height 100%
+
+    img {
+      max-height 100%
+    }
+  }
+}

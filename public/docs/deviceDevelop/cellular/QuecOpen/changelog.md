@@ -1,0 +1,90 @@
+# 更新历史
+
+
+### 版本2.11.0
+>* OTA的处理方式由事件触发处理更改为直接处理
+>* 增加上行消息回复功能
+>* 优化设备接收消息重复包过滤功能
+>* 调整消息解包打包到DP层
+
+### 版本2.10.4
+>* 设备绑定需求更新(ProductKey，ProductSecret，DeviceKey，DeviceSecret等产生变化更新BindSecret)
+>* 配置本地设备服务器地址信息时不再清除DeviceSecret
+
+
+### __版本2.10.3__
+>* 更新设备重置功能
+>* 更新设备绑定功能
+>* 修复开发者中心 OTA潜在缺陷
+>* 修复HTTP OTA合入模组问题
+
+
+### __版本2.10.0__
+>* 新增modbus功能
+>* 新增无线网关功能
+>* 新增设备重置DS功能
+>* 新增上行消息返回PkgID功能
+>* 新增modbus网关版功能  
+
+### __版本2.9.2__
+>* 增加BindCode上报功能
+>* 优化AT指令读取发送数据长度由适配层配置
+>* HTTP OTA指令更改(之前与软件部CloudOTA指令冲突)
+>* 修复OTA升级线程异步问题；
+>* 修复OpenC的OTA升级异步确认BUG，子设备物模型设置时回调上传数据内容格式错误问题
+>* 优化错误码处理机制(删除部分不用错误码，新增平台下发错误码)
+>* 新增平台下发错误码场景区分
+>* 新增通信重复包过滤机制
+
+### __版本2.9.0__
+>* 增加支持网关设备（支持子设备认证、登录、登出、注销、业务通信）
+>* 优化设备数据收发逻辑
+>* 增加 HTTP OTA 对多固件计划的支持
+
+### __版本2.8.3__
+>* 增加 HTTP OTA
+>* 增加 DNS优化处理  
+>* 增加 OTA 对多组件和多固件的支持 
+>* 优化内核层socket管理的资源锁
+
+### __版本2.8.2__
+>* 增加发起接入M2M后网络连接异常时发2,10476事件通知  
+>* 增加应用API由用户设置DK和DS  
+>* 增加M2M接入异常的惩罚机制  
+>* 增加物模型AT支持JSON格式数据  
+>* 增加生产环境HTTP域名强制转换  
+>* 增加DNS后IP缓存，下次直接采用IP连接，除非IP失败再重新DNS  
+
+### __版本2.7.2__
+>* 增加局域网UDP发现设备，仅用于有局域网设备  
+>* 对接新的mqtt broker，支持服务器域名切换和产品的PKPS切换  
+>* 增加M2M通信数据可选加密  
+
+### __版本2.6.1__
+>* 修改位置上报命令，增加上报外挂GPS数据  
+>* 对外增加获取设备信息和状态的API  
+>* 用户配置信息增加AES128 ECB pcks#7加密存储  
+>* 优化网络管理，网络连续失败(QIOT_CONN_NET_ERRTIME_MAX+1)/2 次重启网络，网络连续失败QIOT_CONN_NET_ERRTIME_MAX重启模组  
+>* 增加定位功能  
+>* 修改ttlv数值型数据接口分为整型和浮点型两个数据类型。添加如下接口  
+    >>（1）枚举 QIot_dpDataType_e 增加QIOT_DPDATA_TYPE_INT和QIOT_DPDATA_TYPE_FLOAT  
+（2）ttlv数值型对应的接口修改如下：  
+    >>>  qbool Ql_iotTtlvNodeGetInt(const void *ttlvNode, qint64_t *value);  
+	qbool Ql_iotTtlvNodeGetFloat(const void *ttlvNode, double *value);  
+	qbool Ql_iotTtlvIdGetInt(const void *ttlvHead, quint16_t id, qint64_t *value);  
+	qbool Ql_iotTtlvIdGetFloat(const void *ttlvHead, quint16_t id, double *value);  
+	qbool Ql_iotTtlvIdAddInt(void **ttlvHead, quint16_t id, qint64_t num);  
+	qbool Ql_iotTtlvIdAddFloat(void **ttlvHead, quint16_t id, double num);  
+>* 发送透传或物模型为空内容时直接返回失败  
+>* quos_socket发送数据限制由节点数量限制改为发送总字节数限制(默认50kbytes，具体按具体芯片RAM资源)  
+>* 修改OpenC/Python模式下Ql_iotConfigSetConnmode()不支持QIOT_CONNMODE_AUTO模式  
+
+### __版本2.3.4__
+>* 修改MQTT心跳间隔默认5S  
+>* 事件回调函数中物模型状态获取(QIOT_RECV_SUCC_PHYMODEL_REQ)的参数类型由字符串改为uint16数组指针  
+>* 增加AT透传模式支持  
+>* 更换CJSON库版本(https://github.com/DaveGamble/cJSON/releases/tag/v1.7.14)  
+
+### __版本2.3.3__
+>* 修改物模型发送结果通知，成功(4,10210)或失败(4,10310)  
+>* SDK版本号恢复为2.3.3  

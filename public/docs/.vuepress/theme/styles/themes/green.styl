@@ -1,0 +1,169 @@
+@import '../variables.styl';
+
+.yuu-theme-red {
+	a,
+	p a code,
+	.theme-default-content a code {
+		color: $greenAccentColor;
+	}
+
+	// @parent-theme/components/AlgoliaSearchBox.vue
+	.algolia-search-wrapper .algolia-autocomplete {
+		.algolia-docsearch-suggestion {
+			.algolia-docsearch-suggestion--category-header {
+				background-color: darken($greenAccentColor, 10%);
+			}
+
+			.algolia-docsearch-suggestion--subcategory-column {
+				.algolia-docsearch-suggestion--highlight {
+					color: $greenAccentColor;
+				}
+			}
+		}
+
+		.algolia-docsearch-suggestion--highlight {
+			color: $greenAccentColor;
+		}
+
+		.algolia-docsearch-suggestion--text .algolia-docsearch-suggestion--highlight {
+			box-shadow: inset 0 -2px 0 0 rgba($greenAccentColor, 0.8);
+		}
+	}
+
+	// @parent-theme/components/Home.vue
+	.hero .action-button {
+		background-color: $greenAccentColor;
+		border-bottom-color: darken($greenAccentColor, 10%);
+		&:hover {
+			background-color: lighten($greenAccentColor, 10%);
+		}
+	}
+
+	// @parent-theme/components/NavLinks.vue
+	.nav-links {
+		a,
+		.dropdown-wrapper .dropdown-title,
+		.dropdown-wrapper .mobile-dropdown-title,
+		.dropdown-wrapper .nav-dropdown .dropdown-item a {
+			color: inherit;
+
+			&:hover,
+			&.router-link-active {
+				color: $greenAccentColor;
+			}
+		}
+
+		.dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active::after {
+			border-left-color: $greenAccentColor;
+		}
+	}
+
+	@media (min-width: $MQMobile) {
+		.nav-item > a:not(.external) {
+			&:hover,
+			&.router-link-active {
+				border-bottom-color: $greenAccentColor;
+			}
+		}
+	}
+
+	// @parent-theme/components/PageEdit.vue
+	.page-edit {
+		.edit-link a {
+			color: $greenAccentColor;
+		}
+
+		.last-updated .prefix {
+			color: $greenAccentColor;
+		}
+	}
+
+	// @vuepress/plugin-search/SearchBox.vue
+	.search-box {
+		input:focus {
+			border-color: alpha($greenAccentColor, 0.75);
+		}
+
+		.suggestion {
+			&.focused a {
+				color: $greenAccentColor;
+			}
+		}
+	}
+
+	// @parent-theme/components/SidebarLink.vue
+	&.yuu-theme-dark {
+		a.sidebar-link {
+			color: $darkAltTextColor;
+		}
+	}
+
+	// @parent-theme/components/SidebarLink.vue
+	a.sidebar-link {
+		color: $textColor;
+
+		&:hover {
+			color: $greenAccentColor;
+		}
+
+		&.active {
+			color: $greenAccentColor;
+			border-left-color: $greenAccentColor;
+		}
+	}
+
+	// @vuepress/plugin-pwa/lib/SWUpdatePopup.vue
+	.sw-update-popup {
+		border-color: $greenAccentColor;
+	}
+
+	// @vuepress/plugin-nprogress/nprogress.styl
+	#nprogress {
+		.bar {
+			background-color: $greenAccentColor;
+		}
+
+		.peg {
+			box-shadow: 0 0 10px $greenAccentColor, 0 0 5px $greenAccentColor;
+		}
+
+		.spinner-icon {
+			border-top-color: $greenAccentColor;
+			border-left-color: $greenAccentColor;
+		}
+	}
+
+	// @vuepress/plugin-back-to-top/BackToTop.vue
+	.go-to-top {
+		color: $greenAccentColor !important
+	}
+
+  .navbar{
+    border-bottom: 2px solid $greenAccentColor;
+  }
+
+  .sidebar-heading.clickable:hover {
+    color: $greenAccentColor;
+  }
+
+  .sidebar-heading.clickable.active {
+    color: $greenAccentColor;
+    border-left-color: $greenAccentColor;
+  }
+
+  .sidebar-heading.clickable.active {
+    border-left-color: $greenAccentColor;
+  }
+
+  a.sidebar-link:hover {
+    background-color: #d4ebe0;
+  }
+
+  .sidebar-heading:hover {
+     background-color: #d4ebe0;
+  }
+
+  .center_box .study_box .study_box_title[data-v-e9f0ad46] {
+      border-bottom: 1px solid $greenAccentColor;
+  }
+}

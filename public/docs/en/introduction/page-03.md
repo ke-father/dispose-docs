@@ -1,0 +1,97 @@
+# Terms
+
+This document describes the terms that are used in Developer Center.
+
+<table class="relative-table wrapped confluenceTable tablesorter tablesorter-default stickyTableHeaders" style="width: 100%; padding: 0px;" role="grid" resolved="">
+    <colgroup>
+        <col style="width: 9.72322%;">
+        <col style="width: 90.216%;">
+    </colgroup>
+    <thead class="tableFloatingHeaderOriginal">
+        <tr role="row" class="tablesorter-headerRow">
+            <th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="名词: No sort applied, activate to apply an ascending sort" style="user-select: none;">
+                <div class="tablesorter-header-inner">Terms</div>
+            </th>
+            <th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="描述: No sort applied, activate to apply an ascending sort" style="user-select: none;">
+                <div class="tablesorter-header-inner">Description</div>
+            </th>
+        </tr>
+    </thead>
+    <thead class="tableFloatingHeader" style="display: none;">
+        <tr role="row" class="tablesorter-headerRow">
+            <th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="名词: No sort applied, activate to apply an ascending sort" style="user-select: none;">
+                <div class="tablesorter-header-inner">Terms</div>
+            </th>
+            <th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="描述: No sort applied, activate to apply an ascending sort" style="user-select: none;">
+                <div class="tablesorter-header-inner">Description</div>
+            </th>
+        </tr>
+    </thead>
+    <tbody aria-live="polite" aria-relevant="all">
+        <tr role="row">
+            <td colspan="1" class="confluenceTd">Developer Center</td>
+            <td colspan="1" class="confluenceTd">Developer Center</td>
+        </tr>
+        <tr role="row">
+            <td class="confluenceTd">Project</td>
+            <td class="confluenceTd">A project is a set of products that have a complete set solution.  For example, a manufacturer has multiple projects in mainland China. The manufacturer can create different projects according to different requirements on Developer Center to differentiate projects.</td>
+        </tr>
+        <tr role="row">
+            <td class="confluenceTd">Product</td>
+            <td class="confluenceTd">A product is a collection of devices with the same feature definitions(TSL model). Developer Center issues a unique <strong>ProductKey</strong> for each product.All devices under this product will be burned with the same ProductKey for authentication and communication to connect to Developer Center. </td>
+        </tr>
+        <tr role="row">
+            <td class="confluenceTd">Device</td>
+            <td class="confluenceTd">A device is a physical entity that belongs to a product. Each device connects to Developer Center with a unique DeviceKey and ProductKey issued to the product that the device belons to. </td>
+        </tr>
+        <tr role="row">
+            <td colspan="1" class="confluenceTd">Device Activation Code</td>
+            <td colspan="1" class="confluenceTd">After the device is connected to the Developer Center, if the cumulative uplink and downlink messages reach the specified threshold, a device activation code will be consumed. If it is a Bluetooth device, it also consumes one activation code after you bind the device  to Developer Center on the applicationfor the first time.</td>
+        </tr>
+        <tr role="row">
+            <td class="confluenceTd">Device Certificate</td>
+            <td class="confluenceTd">
+                A device certificate consists of a ProductKey, a DeviceKey, and a DeviceSecret, which is used for device authentication and connection establishment. <span>&nbsp;</span>
+                <li>ProductKey: It is the unique identifier of a product issued by Developer Center. ProductKeys are required in device authentication and communication. You must safely keep them. </li>
+                <li>ProductSecret: It is the private key that is issued by Developer Center for each product. A ProductSecret is used in pair with a ProductKey. ProductSecrets are required in unique-certificate-per-product authentication authentication. You must safely keep them. </li>
+                <li>DeviceKey: It is a device identifier generated by Developer Center or customized for each device during device registration. Normally, IMEI or the MAC address of the module is the DeviceKeythe. </li>
+                <li>DeviceSecret: It is the private key that is issued by Developer Center after the device passes Developer Center aunthentication with ProductKey, ProductSecret and DeviceKey. DeviceSecrets are required  for the device to connect to Developer Center. You must safely keep them.</li>
+            </td>
+        </tr>
+        <tr role="row">
+            <td class="confluenceTd">Unique-certificate-per-product Authentication</td>
+            <td class="confluenceTd">The ProductKey and ProductSecret of a product can be downloaded to all devices under the same product. When a device sends an authentication request, Developer Center authenticates the device based on the carried ProductKey and ProductSecret. If the authentication succeeds, Developer Center issues the required information to the device. Then, the device uses the issued information to connect to Developer Center.</td>
+        </tr>
+        <tr role="row">
+            <td class="confluenceTd">Access Key/Access Secret</td>
+            <td class="confluenceTd">Developer Center provides OpenAPIs and AMQP message subscription for third-party developers. The features are available for developers, but you need to create an AccessKey/AccessSecret as an authentication token to use them after Developer Center activates the required features.</td>
+        </tr>
+        <tr role="row">
+            <td class="confluenceTd">Message Subscription</td>
+            <td class="confluenceTd">Message subscription is a server-side message subscription implemented with the Advanced Message Queuing Protocol(AMQP).</td>
+        </tr>
+        <tr role="row">
+            <td colspan="1" class="confluenceTd">OTA</td>
+            <td colspan="1" class="confluenceTd">Over-the-Air. Developer Center supports upgrading the device or module firmware and MCU programs over the air.</td>
+        </tr>
+        <tr role="row">
+            <td colspan="1" class="confluenceTd">TSL Model</td>
+            <td colspan="1" class="confluenceTd">The features of a device in Developer Center include property, service and event of the device. Developer Center describes the object by defining a description language of objects, which is called TSL (Thing Specification Language). It uses JSON format, and you can assemble, report, and issue device data according to TSL.</td>
+        </tr>
+        <tr role="row">
+            <td colspan="1" class="confluenceTd">Application</td>
+            <td colspan="1" class="confluenceTd">An application usually refers to the application on a mobile phone. corresponding to a product. The application provides end users with features such as account registration, device binding, and device remote management.</td>
+        </tr>
+        <tr role="row">
+            <td colspan="1" class="confluenceTd">End User</td>
+            <td colspan="1" class="confluenceTd">Refers to end consumers who use mobile apps.</td>
+        </tr>
+        <tr role="row">
+            <td colspan="1" class="confluenceTd">User Domain</td>
+            <td colspan="1" class="confluenceTd">
+               A user domain groups the end users. Different App users belong to different user domains. Manufacturers can limit the range of product types that can be managed by the App through the user domains.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
